@@ -6,7 +6,7 @@ namespace VogtPayroll
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Development Branch!");
         }
     }
 }
