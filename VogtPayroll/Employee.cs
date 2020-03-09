@@ -41,11 +41,8 @@ namespace VogtPayroll
         private decimal ComputePaidFedTax()
         {
             // compute amount of money emp should pay as fed tax. use formula employee paid fed taxes = 30% of gross pay
-            decimal grossPay;
-            
-            grossPay = ComputeGrossPay();
 
-            return grossPay * .30m;
+            return ComputeGrossPay() * .30m;
 
         }
         #endregion
@@ -58,11 +55,8 @@ namespace VogtPayroll
         private decimal ComputePaidStateTax()
         {
             // compute money which should pay as state tax. use formula emp paid state taxes 10% of gross pay
-            decimal grossPay;
 
-            grossPay = ComputeGrossPay();
-
-            return grossPay * .10m;
+            return ComputeGrossPay() * .10m;
 
         }
         #endregion
@@ -75,15 +69,8 @@ namespace VogtPayroll
         private decimal ComputeNetPay()
         {
             // compute net pay. use formula employee net pay = employee gross pay - (paid fed tax + paid state tax)
-            decimal grossPay;
-            decimal paidFedTax;
-            decimal paidStateTax;
-            
-            grossPay = ComputeGrossPay();
-            paidFedTax = ComputePaidFedTax();
-            paidStateTax = ComputePaidStateTax();
 
-            return grossPay - (paidFedTax + paidStateTax); 
+            return ComputeGrossPay() - (ComputePaidFedTax() + ComputePaidStateTax()); 
 
         }
         #endregion region
